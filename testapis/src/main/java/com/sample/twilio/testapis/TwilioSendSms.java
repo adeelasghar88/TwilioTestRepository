@@ -14,8 +14,8 @@ public class TwilioSendSms {
 		Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
         
 		Message message = Message.creator(
-                new com.twilio.type.PhoneNumber("+12679322184"),
                 new com.twilio.type.PhoneNumber("+12159900519"),
+                new com.twilio.type.PhoneNumber("+12679322184"),
                 "Do you want to continue? Press 'Y' for yes and 'N' for No ...")
             .setStatusCallback(URI.create("https://desolate-bayou-22407.herokuapp.com/api/patient/123456789"))
             .create();
