@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TwilioController {
 	
-	@GetMapping("/api/testTwilio")
+	@GetMapping("/")
 	public String testTwilioSampleAPI() {
 		return "Test Twilio Sample API";
 	}

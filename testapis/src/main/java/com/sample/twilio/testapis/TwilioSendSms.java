@@ -17,7 +17,7 @@ public class TwilioSendSms {
                 new com.twilio.type.PhoneNumber("+12679322184"),
                 new com.twilio.type.PhoneNumber("+12159900519"),
                 "Do you want to continue? Press 'Y' for yes and 'N' for No ...")
-            .setStatusCallback(URI.create("http://postb.in/1234abcd"))
+            .setStatusCallback(URI.create("https://polar-stream-53322.herokuapp.com/api/patient/123456789"))
             .create();
 
         System.out.println(message.getSid());
