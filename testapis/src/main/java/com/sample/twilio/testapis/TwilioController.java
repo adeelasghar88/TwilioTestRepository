@@ -18,7 +18,7 @@ public class TwilioController {
 	
 	@PostMapping("/api/patient/{patientId}")
 	public String twilioCallbackResponse(@PathVariable String patientId) {
-		System.out.println("Twilio Callback API called with patient Id " + patientId);
+		System.out.println("Twilio Callback API called with patient ID " + patientId);
 		
 		return new MessagingResponse.Builder().message(
 			      new Message.Builder("Thanks for your message").build())
