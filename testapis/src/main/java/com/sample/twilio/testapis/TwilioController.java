@@ -20,12 +20,9 @@ public class TwilioController {
 	public String twilioCallbackResponse(@PathVariable String patientId) {
 		System.out.println("Twilio Callback API called with patient Id " + patientId);
 		
-		String responseXml = new MessagingResponse.Builder().message(
+		return new MessagingResponse.Builder().message(
 			      new Message.Builder("Thanks for your message").build())
 			        .build()
 			        .toXml();
-		
-		System.out.println("==========XML======= \n" + responseXml);
-		return responseXml;
 	}
 }
