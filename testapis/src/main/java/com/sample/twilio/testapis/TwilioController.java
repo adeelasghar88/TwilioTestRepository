@@ -5,6 +5,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.twilio.twiml.MessagingResponse;
+import com.twilio.twiml.messaging.Message;
+
 @RestController
 public class TwilioController {
 	
@@ -16,6 +19,13 @@ public class TwilioController {
 	@PostMapping("/api/patient/{patientId}")
 	public String twilioCallbackResponse(@PathVariable String patientId) {
 		System.out.println("Twilio Callback API called with patient Id " + patientId);
-		return patientId;
+		
+		String responseXml = new MessagingResponse.Builder().message(
+			      new Message.Builder("Thanks for your message").build())
+			        .build()
+			        .toXml();
+		
+		System.out.println("==========XML======= \n" + responseXml);
+		return responseXml;
 	}
 }
